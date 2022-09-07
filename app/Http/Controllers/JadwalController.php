@@ -6,6 +6,7 @@ use App\Models\Dosen\DosenModel;
 use App\Models\Dosen\jurnalPerkuliahanModel;
 use App\Models\Dosen\KelasKuliahModel;
 use App\Models\Dosen\krsModel;
+use App\Models\Dosen\presensiModel;
 use App\Models\Dosen\ruanganKelasModel;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -42,15 +43,29 @@ class JadwalController extends Controller
 
     public function jurnal($id)
     {
-        $jurnal = jurnalPerkuliahanModel::all();
-        return $jurnal->kelaskuliah;
+        // return $jurnal[0]->kelaskuliah;
+        $untukJumlah = krsModel::where('idKelasKuliah', $id)->whereHas('kelaskuliah', function($q){
+            $q->where('nidn', (DosenModel::where('email', (Auth::user()->email))->first()->nidn));
+        })->count();
+
+        $jurnal = jurnalPerkuliahanModel::where('idKelasKuliah', $id)->whereHas('kelaskuliah', function($q){
+            $q->where('nidn', (DosenModel::where('email', (Auth::user()->email))->first()->nidn));
+        })->get();
         $namaMK = KelasKuliahModel::where('idKelasKuliah', $id)->first();
-        return view('package_dosen.jurnalPerkuliahan', compact('namaMK'));
+        return view('package_dosen.jurnalPerkuliahan', compact('untukJumlah', 'jurnal', 'namaMK', 'id'));
     }
 
-    public function presensi()
+    public function presensi($id)
     {
         # code...
-        return view('package_dosen.presensi');
+        $no = 1;
+        $auth = Auth::user()->email; //indentifikasi user
+        $dosen = DosenModel::where('email', $auth)->first();
+        // $hasilPresensi = presensiModel::where();
+        $presensi = krsModel::where('idKelasKuliah', $id)->whereHas('kelaskuliah', function($q){
+            $q->where('nidn', (DosenModel::where('email', (Auth::user()->email))->first()->nidn));
+        })->get();
+        // return $hasilPresensi;
+        return view('package_dosen.presensi', compact('presensi'));
     }
 }

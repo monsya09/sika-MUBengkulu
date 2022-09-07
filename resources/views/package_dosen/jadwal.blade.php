@@ -50,7 +50,7 @@
                             <td>{{ $j->kelasmhs->namaKelas }}</td>
                             <td>{{ $j->ruangankelas->namaRuangan }}</td>
                             <td>{{ $j->tahunakademik->idTahunAkademik }}</td>
-                            <td><a href="/jurnal-{{ $j->idKelasKuliah }}" class="text-theme-20 font-bold">Jurnal Perkuliahan</a> || <a href="" class="text-theme-22 font-bold">Nilai</a></td>
+                            <td><a href="/jurnal/{{ $j->idKelasKuliah }}" class="text-theme-20 font-bold">Jurnal Perkuliahan</a> || <a href="" class="text-theme-22 font-bold">Nilai</a></td>
                         </tr>
                         @endforeach
                     </tbody>

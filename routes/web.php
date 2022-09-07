@@ -23,7 +23,7 @@ Route::group(['middleware' => 'auth'], function(){
     })->name('dashboard');
 
     Route::get('/jadwal', [JadwalController::class, 'index']);
-    Route::get('/jurnal-{id}', [JadwalController::class, 'jurnal'])->name('jurnal');
-    Route::get('/presensi', [JadwalController::class, 'presensi']);
+    Route::get('/jurnal/{id}', [JadwalController::class, 'jurnal'])->name('jurnal');
+    Route::get('/jurnal/presensi/{id}', [JadwalController::class, 'presensi']);
 });
 require __DIR__.'/auth.php';

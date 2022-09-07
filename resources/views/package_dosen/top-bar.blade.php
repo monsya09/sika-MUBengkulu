@@ -3,7 +3,7 @@
     <div class="h-full flex items-center">
         <!-- BEGIN: Logo -->
         <a href="" class="-intro-x hidden md:flex">
-            <img class="w-6" src="dist/images/umb.svg">
+            <img class="w-6" src="/dist/images/umb.svg">
             <span class="text-white text-lg ml-3"> SIKA<span class="font-medium" style="color: rgb(247, 139, 0);">MU</span> </span>
         </a>
         <!-- END: Logo -->
@@ -38,28 +38,28 @@
                     <div class="mb-5">
                         <a href="" class="flex items-center mt-2">
                             <div class="w-8 h-8 image-fit">
-                                <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="dist/images/profile-2.jpg">
+                                <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-2.jpg">
                             </div>
                             <div class="ml-3">Bruce Willis</div>
                             <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">brucewillis@left4code.com</div>
                         </a>
                         <a href="" class="flex items-center mt-2">
                             <div class="w-8 h-8 image-fit">
-                                <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="dist/images/profile-8.jpg">
+                                <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-8.jpg">
                             </div>
                             <div class="ml-3">Vin Diesel</div>
                             <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">vindiesel@left4code.com</div>
                         </a>
                         <a href="" class="flex items-center mt-2">
                             <div class="w-8 h-8 image-fit">
-                                <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="dist/images/profile-12.jpg">
+                                <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-12.jpg">
                             </div>
                             <div class="ml-3">Leonardo DiCaprio</div>
                             <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">leonardodicaprio@left4code.com</div>
                         </a>
                         <a href="" class="flex items-center mt-2">
                             <div class="w-8 h-8 image-fit">
-                                <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="dist/images/profile-2.jpg">
+                                <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-2.jpg">
                             </div>
                             <div class="ml-3">Kevin Spacey</div>
                             <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">kevinspacey@left4code.com</div>
@@ -68,28 +68,28 @@
                     <div class="search-result__content__title">Products</div>
                     <a href="" class="flex items-center mt-2">
                         <div class="w-8 h-8 image-fit">
-                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="dist/images/preview-4.jpg">
+                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/preview-4.jpg">
                         </div>
                         <div class="ml-3">Samsung Galaxy S20 Ultra</div>
                         <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">Smartphone &amp; Tablet</div>
                     </a>
                     <a href="" class="flex items-center mt-2">
                         <div class="w-8 h-8 image-fit">
-                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="dist/images/preview-3.jpg">
+                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/preview-3.jpg">
                         </div>
                         <div class="ml-3">Nikon Z6</div>
                         <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">Photography</div>
                     </a>
                     <a href="" class="flex items-center mt-2">
                         <div class="w-8 h-8 image-fit">
-                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="dist/images/preview-10.jpg">
+                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/preview-10.jpg">
                         </div>
                         <div class="ml-3">Dell XPS 13</div>
                         <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">PC &amp; Laptop</div>
                     </a>
                     <a href="" class="flex items-center mt-2">
                         <div class="w-8 h-8 image-fit">
-                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="dist/images/preview-3.jpg">
+                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/preview-3.jpg">
                         </div>
                         <div class="ml-3">Dell XPS 13</div>
                         <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">PC &amp; Laptop</div>
@@ -106,7 +106,7 @@
                     <div class="notification-content__title">Notifications</div>
                     <div class="cursor-pointer relative flex items-center ">
                         <div class="w-12 h-12 flex-none image-fit mr-1">
-                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="dist/images/profile-2.jpg">
+                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-2.jpg">
                             <div class="w-3 h-3 bg-theme-20 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                         </div>
                         <div class="ml-2 overflow-hidden">
@@ -119,7 +119,7 @@
                     </div>
                     <div class="cursor-pointer relative flex items-center mt-5">
                         <div class="w-12 h-12 flex-none image-fit mr-1">
-                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="dist/images/profile-8.jpg">
+                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-8.jpg">
                             <div class="w-3 h-3 bg-theme-20 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                         </div>
                         <div class="ml-2 overflow-hidden">
@@ -132,7 +132,7 @@
                     </div>
                     <div class="cursor-pointer relative flex items-center mt-5">
                         <div class="w-12 h-12 flex-none image-fit mr-1">
-                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="dist/images/profile-12.jpg">
+                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-12.jpg">
                             <div class="w-3 h-3 bg-theme-20 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                         </div>
                         <div class="ml-2 overflow-hidden">
@@ -145,7 +145,7 @@
                     </div>
                     <div class="cursor-pointer relative flex items-center mt-5">
                         <div class="w-12 h-12 flex-none image-fit mr-1">
-                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="dist/images/profile-2.jpg">
+                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-2.jpg">
                             <div class="w-3 h-3 bg-theme-20 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                         </div>
                         <div class="ml-2 overflow-hidden">
@@ -158,7 +158,7 @@
                     </div>
                     <div class="cursor-pointer relative flex items-center mt-5">
                         <div class="w-12 h-12 flex-none image-fit mr-1">
-                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="dist/images/profile-8.jpg">
+                            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-8.jpg">
                             <div class="w-3 h-3 bg-theme-20 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                         </div>
                         <div class="ml-2 overflow-hidden">
@@ -176,7 +176,7 @@
         <!-- BEGIN: Account Menu -->
         <div class="intro-x dropdown w-8 h-8">
             <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in" role="button" aria-expanded="false">
-                <img alt="Tinker Tailwind HTML Admin Template" src="dist/images/profile-2.jpg">
+                <img alt="Tinker Tailwind HTML Admin Template" src="/dist/images/profile-2.jpg">
             </div>
             <div class="dropdown-menu w-56">
                 <div class="dropdown-menu__content box dark:bg-dark-6">

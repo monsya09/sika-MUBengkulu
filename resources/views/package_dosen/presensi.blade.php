@@ -23,32 +23,34 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($presensi as $p)
                         <tr>
                             <td>1</td>
-                            <td>0123</td>
-                            <td>Anton</td>
+                            <td>{{ $p->npm }}</td>
+                            <td>{{ $p->mahasiswa->nama_mhs }}</td>
                             <td>
                                 <div class="flex flex-col sm:flex-row mt-2">
-                                    <div class="form-check mr-2">
-                                        <input id="radio-switch-4" class="form-check-input" type="radio" name="horizontal_radio_button" value="horizontal-radio-chris-evans">
+                                    <div class="form-check mr-2 sm:mt-0 form-control">
+                                        <input id="radio-switch-4" class="form-check-input" type="radio" name="horizontal_radio_button" value="horizontal-radio-chris-evans" checked>
                                         <label class="form-check-label" for="radio-switch-4">Hadir</label>
                                     </div>
-                                    <div class="form-check mr-2 mt-2 sm:mt-0">
+                                    <div class="form-check mr-2 sm:mt-0 form-control">
                                         <input id="radio-switch-5" class="form-check-input" type="radio" name="horizontal_radio_button" value="horizontal-radio-liam-neeson">
                                         <label class="form-check-label" for="radio-switch-5">Izin</label>
                                     </div>
-                                    <div class="form-check mr-2 mt-2 sm:mt-0">
+                                    <div class="form-check mr-2 sm:mt-0 form-control">
                                         <input id="radio-switch-6" class="form-check-input" type="radio" name="horizontal_radio_button" value="horizontal-radio-daniel-craig">
                                         <label class="form-check-label" for="radio-switch-6">Sakit</label>
                                     </div>
-                                    <div class="form-check mr-2 mt-2 sm:mt-0">
+                                    <div class="form-check mr-2 sm:mt-0 form-control">
                                         <input id="radio-switch-6" class="form-check-input" type="radio" name="horizontal_radio_button" value="horizontal-radio-daniel-craig">
                                         <label class="form-check-label" for="radio-switch-6">TK</label>
                                     </div>
                                 </div>
                             </td>
                             <td>-</td>
-                        </tr>
+                        </tr>                            
+                        @endforeach
                     </tbody>
                 </table>
             </div>

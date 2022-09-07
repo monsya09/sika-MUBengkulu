@@ -57,7 +57,7 @@ class KelasKuliahModel extends Model
 
     public function jurnalPerkuliahan()
     {
-        return $this->hasOne(jurnalPerkuliahanModel::class, 'idKelasKuliah', 'idKelasKuliah');
+        return $this->hasMany(jurnalPerkuliahanModel::class, 'idKelasKuliah');
     }
 
 }

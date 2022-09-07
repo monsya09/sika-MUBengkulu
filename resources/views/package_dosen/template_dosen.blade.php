@@ -20,7 +20,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <meta name="author" content="LEFT4CODE">
         <title>@yield('judul')</title>
         <!-- BEGIN: CSS Assets-->
-        <link rel="stylesheet" href="dist/css/app.css" />
+        <link rel="stylesheet" href="/dist/css/app.css" />
         @yield('css')
         <!-- END: CSS Assets-->
         <!-- Scripts -->
@@ -39,7 +39,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN: JS Assets-->
         <!-- <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=["your-google-map-api"]&libraries=places"></script> -->
-        <script src="dist/js/app.js"></script>
+        <script src="/dist/js/app.js"></script>
         @yield('js')
         <!-- END: JS Assets-->
     </body>

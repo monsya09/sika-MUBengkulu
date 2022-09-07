@@ -18,7 +18,7 @@
                 <div class="col-span-12 lg:col-span-6 mt-2">
                     <div class="intro-y block sm:flex items-center h-10">
                         <h2 class="text-lg font-medium truncate mr-5">
-                            Sales Report
+                            Jumlah Mahasiswa 5 Tahun Terakhir
                         </h2>
                         <div class="sm:ml-auto mt-3 sm:mt-0 relative text-gray-700 dark:text-gray-300">
                             <i data-feather="calendar" class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0"></i> 
@@ -29,12 +29,12 @@
                         <div class="flex flex-col xl:flex-row xl:items-center">
                             <div class="flex">
                                 <div>
-                                    <div class="text-theme-24 dark:text-gray-300 text-lg xl:text-xl font-medium">$15,000</div>
+                                    <div class="text-theme-24 dark:text-gray-300 text-lg xl:text-xl font-medium">7000</div>
                                     <div class="mt-0.5 text-gray-600 dark:text-gray-600">This Month</div>
                                 </div>
                                 <div class="w-px h-12 border border-r border-dashed border-gray-300 dark:border-dark-5 mx-4 xl:mx-5"></div>
                                 <div>
-                                    <div class="text-gray-600 dark:text-gray-600 text-lg xl:text-xl font-medium">$10,000</div>
+                                    <div class="text-gray-600 dark:text-gray-600 text-lg xl:text-xl font-medium">75000</div>
                                     <div class="mt-0.5 text-gray-600 dark:text-gray-600">Last Month</div>
                                 </div>
                             </div>
@@ -55,7 +55,7 @@
                 <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-2">
                     <div class="intro-y flex items-center h-10">
                         <h2 class="text-lg font-medium truncate mr-5">
-                            Weekly Top Seller
+                            Mahasiswa per Prodi
                         </h2>
                         <a href="" class="ml-auto text-theme-30 dark:text-theme-25 truncate">Show More</a> 
                     </div>
@@ -88,7 +88,7 @@
                 <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-2">
                     <div class="intro-y flex items-center h-10">
                         <h2 class="text-lg font-medium truncate mr-5">
-                            Sales Report
+                            Kepangkatan Dosen
                         </h2>
                         <a href="" class="ml-auto text-theme-30 dark:text-theme-25 truncate">Show More</a> 
                     </div>
