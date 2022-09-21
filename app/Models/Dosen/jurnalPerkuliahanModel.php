@@ -9,9 +9,15 @@ class jurnalPerkuliahanModel extends Model
 {
     use HasFactory;
     protected $table = "jurnalperkuliahan";
+    protected $guarded = [];
 
     public function KelasKuliah()
     {
         return $this->belongsTo(KelasKuliahModel::class, 'idKelasKuliah', 'idKelasKuliah');
+    }
+
+    public function presensiMhs()
+    {
+        return $this->hasMany(presensiModel::class, 'idJurnal');
     }
 }

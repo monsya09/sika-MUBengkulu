@@ -15,4 +15,14 @@ class MahasiswaModel extends Model
     {
         return $this->hasMany(krsModel::class, 'npm');
     }
+
+    public function presensiMhs()
+    {
+        return $this->hasMany(presensiModel::class, 'npm');
+    }
+
+    public function programStudi()
+    {
+        return $this->belongsTo(prodiModel::class, 'idProgramStudi', 'idProgramStudi');
+    }
 }

@@ -14,4 +14,9 @@ class tahunAkademikModel extends Model
     {
         return $this->hasMany(KelasKuliahModel::class, 'idTahunAkademik');
     }
+
+    public function krs()
+    {
+        return $this->hasMany(krsModel::class, 'idTahunAkademik');
+    }
 }

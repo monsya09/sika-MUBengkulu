@@ -20,9 +20,13 @@ class KelasKuliahModel extends Model
         return $this->belongsTo(DosenModel::class, 'nidn', 'nidn');
     }
 
-    public function kelasMhs()
+    // public function kelasMhs()
+    // {
+    //     return $this->belongsTo(kelasMhsModel::class, 'idKelasmhs', 'idKelasmhs');
+    // }
+    public function masterkelas()
     {
-        return $this->belongsTo(kelasMhsModel::class, 'idKelasmhs', 'idKelasmhs');
+        return $this->belongsTo(masterModel::class, 'idMasterKelas', 'idMasterKelas');
     }
 
     public function lingkupKuliah()
@@ -58,6 +62,16 @@ class KelasKuliahModel extends Model
     public function jurnalPerkuliahan()
     {
         return $this->hasMany(jurnalPerkuliahanModel::class, 'idKelasKuliah');
+    }
+
+    public function presensiMhs()
+    {
+        return $this->hasManyThrough(presensiModel::class, jurnalPerkuliahanModel::class,
+        'idKelasKuliah', // Foreign key on the "jurnalperkuliahan" table...
+        'idJurnal', // Foreign key on the "presensimhs" table...
+        'idKelasKuliah', // Local key on the "kelaskuliah" table...
+        'idJurnal' // Local key on the "jurnalperkuliahan" table...    
+    );
     }
 
 }

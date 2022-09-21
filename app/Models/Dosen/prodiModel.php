@@ -14,4 +14,19 @@ class prodiModel extends Model
     {
         return $this->hasMany(KelasKuliahModel::class, 'idProgramStudi');
     }
+
+    public function Mahasiswa()
+    {
+        return $this->hasMany(prodiModel::class, 'idProgramStudi');
+    }
+
+    public function krs()
+    {
+        return $this->hasManyThrough(krsModel::class, MahasiswaModel::class,
+        'idProgramStudi', // Foreign key on the "mahasiswa" table...
+        'npm', // Foreign key on the "krs" table...
+        'idProgramStudi', // Local key on the "prodi" table...
+        'npm' // Local key on the "npm" table...        
+    );
+    }
 }

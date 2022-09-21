@@ -11,11 +11,14 @@
                 <div class="mr-2"><strong>Tahun Akademik</strong></div>
                 <div class="w-full sm:w-auto mt-3 sm:mt-0 sm:ml-auto md:ml-0 mr-2">
                     <div class="relative text-gray-700 dark:text-gray-300">
-                        <input type="text" class="form-control w-32 box placeholder-theme-13 rounded-full border-transparent" placeholder="eg.20221">
+                <form action="/jadwal/filter" method="post">
+                    @csrf
+                        <input name="ta" type="text" class="form-control w-32 box placeholder-theme-13 rounded-full border-transparent" placeholder="eg.20221" required>
                     </div>
                 </div>
-                <div class="w-full sm:w-auto mt-3 mr-2 sm:mt-0 sm:ml-auto md:ml-0"><a href="" class="btn btn-primary">Filter</a></div>
-                <div class="w-full sm:w-auto mt-3 mr-2 sm:mt-0 sm:ml-auto md:ml-0"><a href="" class="btn btn-rounded-warning">All</a></div>
+                <div class="w-full sm:w-auto mt-3 mr-2 sm:mt-0 sm:ml-auto md:ml-0"><button class="btn btn-primary dark:text-theme-10 tooltip" title="Lihat jadwal per tahun akademik" type="submit">Lihat</button></div>
+                </form>
+                <div class="w-full sm:w-auto mt-3 mr-2 sm:mt-0 sm:ml-auto md:ml-0"><a href="/jadwal/all"  class="btn btn-rounded-warning">All</a></div>
                 <div class="hidden md:block mx-auto"></div>
                 <div class="w-full sm:w-auto mt-3 sm:mt-0 sm:ml-auto md:ml-0"><a href="" class="btn btn-success">Cetak Jadwal<i data-feather="printer" class="w-4 h-4"></i></a></div>
             </div>
@@ -47,7 +50,7 @@
                             <td>{{ $j->matakuliah->totalSKSMK }}</td>
                             <td>{{ $j->hariKuliah }}</td>
                             <td>{{ $j->jamMulaiKuliah }} ~ {{ $j->jamSelesaiKuliah}} </td>
-                            <td>{{ $j->kelasmhs->namaKelas }}</td>
+                            <td>{{ $j->matakuliah->semester.$j->masterkelas->kelas}}</td>
                             <td>{{ $j->ruangankelas->namaRuangan }}</td>
                             <td>{{ $j->tahunakademik->idTahunAkademik }}</td>
                             <td><a href="/jurnal/{{ $j->idKelasKuliah }}" class="text-theme-20 font-bold">Jurnal Perkuliahan</a> || <a href="" class="text-theme-22 font-bold">Nilai</a></td>
