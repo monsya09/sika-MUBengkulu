@@ -17,7 +17,15 @@
             </a>
         </li>
         <li>
-            <a href="{{ url('jadwal') }}" class="menu {{ Request::is('jadwal')?'menu--active':'' }}">
+            <a href="{{ url('bimbingan') }}" class="menu {{ Request::is('bimbingan*')?'menu--active':'' }}">
+                <div class="menu__icon"> <i data-feather="users"></i> </div>
+                <div class="menu__title">
+                    Bimbingan KRS
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('jadwal/now') }}" class="menu {{ Request::is('jadwal')?'menu--active':'' }}">
                 <div class="menu__icon"> <i data-feather="calendar"></i> </div>
                 <div class="menu__title">
                     Jadwal 
@@ -29,22 +37,6 @@
                 <div class="menu__icon"> <i data-feather="file-text"></i> </div>
                 <div class="menu__title">
                     Jurnal Perkuliahan
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="{{ url('rps') }}" class="menu {{ Request::is('rps')?'menu--active':'' }}">
-                <div class="menu__icon"> <i data-feather="file-text"></i> </div>
-                <div class="menu__title">
-                    RPS 
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="{{ url('mahasiswa') }}" class="menu {{ Request::is('mahasiswa')?'menu--active':'' }}">
-                <div class="menu__icon"> <i data-feather="users"></i> </div>
-                <div class="menu__title">
-                    Mahasiswa (PA)
                 </div>
             </a>
         </li>

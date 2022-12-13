@@ -37,7 +37,9 @@
                             <th>Jam</th>
                             <th>Kelas</th>
                             <th>Ruang</th>
-                            <th>Tahun Akademik</th>
+                            <th>TA</th>
+                            <th>RPS</th>
+                            <th>Progres</th>
                             <th>Opsi</th>
                         </tr>
                     </thead>
@@ -45,7 +47,7 @@
                         @foreach($jadwal as $j)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $j->idMataKuliah}}</td>
+                            <td>{{ $j->idMataKuliah }}</td>
                             <td>{{ $j->matakuliah->namaMataKuliah }}</td>
                             <td>{{ $j->matakuliah->totalSKSMK }}</td>
                             <td>{{ $j->hariKuliah }}</td>
@@ -53,8 +55,52 @@
                             <td>{{ $j->matakuliah->semester.$j->masterkelas->kelas}}</td>
                             <td>{{ $j->ruangankelas->namaRuangan }}</td>
                             <td>{{ $j->tahunakademik->idTahunAkademik }}</td>
-                            <td><a href="/jurnal/{{ $j->idKelasKuliah }}" class="text-theme-20 font-bold">Jurnal Perkuliahan</a> || <a href="" class="text-theme-22 font-bold">Nilai</a></td>
+                            <td>
+                                <a href="javascript:;" data-toggle="modal" data-target="#krs-{{ $j->idMataKuliah }}" class="text-theme-25"><i data-feather="file-text" class="w-4 h-4"></i>lihat</a> 
+                                {{-- <a class="text-theme-25" href="/downloadRps" target="_blank" rel="noopener noreferrer">download</a></td> --}}
+                            <td>
+                                @foreach ($progres as $p)
+                                    @if ($j->idKelasKuliah == $p->idKelasKuliah)
+                                        <a class="tooltip" title="{{ $p->jumlahHadir/16*100 }}%" href="/jurnal/presensiDosen/{{ $j->idKelasKuliah }}">
+                                            <div class="progress h-4 w-20 rounded">
+                                                @if ($p->jumlahHadir < 5 )
+                                                    <div style="width:{{ $p->jumlahHadir/16*100 }}% " class="progress-bar bg-theme-21 rounded" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                    </div>
+                                                @elseif ($p->jumlahHadir < 8)
+                                                    <div style="width:{{ $p->jumlahHadir/16*100 }}% " class="progress-bar bg-theme-15 rounded" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                    </div>
+                                                @elseif ($p->jumlahHadir < 16)
+                                                    <div style="width:{{ $p->jumlahHadir/16*100 }}% " class="progress-bar bg-theme-27 rounded" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                        {{ $p->jumlahHadir/16*100 }}%  
+                                                    </div>
+                                                @elseif($p->jumlahHadir == 16)
+                                                    <div style="width:{{ $p->jumlahHadir/16*100 }}% " class="progress-bar bg-theme-20 rounded" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                        {{ "Complete" }}
+                                                    </div>
+                                                @endif
+                                            </div>
+                                        </a>
+                                    @endif
+                                @endforeach
+                            </td>
+
+                            <td><a href="/jurnal/{{ $j->idKelasKuliah }}" class="text-theme-20 font-bold"><i data-feather="file-text"></i>Aktivitas</a> | 
+                                <a href="/detailKhs/{{ $j->idKelasKuliah }}" class="text-theme-22 font-bold">Nilai</a>
+                            </td>
                         </tr>
+                        <!-- BEGIN: Super Large Modal Content -->
+                        <div id="krs-{{ $j->idMataKuliah }}" class="modal w-fit" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-body p-4 text-center">
+                                        <div class="mb-2"><button class="btn btn-sm btn-success" type="button">Cetak KRS <i data-feather="printer" class="w-4 h-4 mr-2"></i></button></div>
+                                        <iframe id="ipdf" src="/storage/krs/krs1.pdf" width="100%" height="900"></iframe>
+                                        {{-- <embed class="w-auto" type="application/pdf" src="/storage/krs/krs1.pdf"></embed> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END: Super Large Modal Content -->
                         @endforeach
                     </tbody>
                 </table>
@@ -62,6 +108,7 @@
         </div>
     </div>
 </div>
+
 @section('js')
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
@@ -73,6 +120,14 @@
         .columns.adjust()
         .responsive.recalc();
         } );
+</script>
+<script type="text/javascript">
+    $("button").click(function(){
+        var myIframe = document.getElementById("ipdf").contentWindow;
+            myIframe.focus();
+            myIframe.print();
+            return false;
+    });
 </script>
 @stop
 @endsection

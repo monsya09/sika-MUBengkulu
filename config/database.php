@@ -35,6 +35,18 @@ return [
 
     'connections' => [
 
+        'baku' => [
+            'driver' => 'mysql',
+            // 'url' => '192.168.50.215',
+            'host' => '192.168.50.215',
+            'port' => '3306',
+            'database' => 'siakad',
+            'username' => 'dosen',
+            'password' => '12345678',
+            'prefix' => '',
+            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+        ],
+
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),

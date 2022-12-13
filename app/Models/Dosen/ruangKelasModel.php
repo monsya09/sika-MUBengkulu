@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class ruangKelasModel extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'idRuanganKelas';
+    protected $casts = ['idRuanganKelas' => 'string'];
     protected $table = "ruangankelas";
 
     public function KelasKuliah()

@@ -8,17 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class krsModel extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'idKRS';
+    protected $casts = ['idKRS' => 'string'];
     protected $table = "krs";
-
-    // public function Mahasiswa()
-    // {
-    //     return $this->belongsTo(MahasiswaModel::class, 'npm', 'npm');
-    // }
-
-    // public function KelasKuliah()
-    // {
-    //     return $this->belongsTo(KelasKuliahModel::class, 'idKelasKuliah', 'idkelasKuliah');
-    // }
+    protected $guarded = [];
 
     public function Mahasiswa()
     {
@@ -39,4 +32,31 @@ class krsModel extends Model
     {
         return $this->belongsTo(masterModel::class, 'idMasterKelas', 'idMasterKelas');
     }
+
+    public function bimbingankrs()
+    {
+        return $this->hasOne(BimbinganKrsModel::class, 'idKRS');
+    }
+
+    public function presensimhs()
+    {
+        return $this->hasMany(presensiModel::class, 'idKRS');
+    }
+
+    public function jurnalperkuliahan()
+    {
+        return $this->belongsToMany(jurnalPerkuliahanModel::class, 'presensimhs', 'idKRS', 'idJurnal')
+        ->withPivot('kehadiran');
+    }
+    
+    public function detailKhs()
+    {
+        return $this->hasMany(detailKhsModel::class, 'idKRS');
+    }
+
+    public function Khs()
+    {
+        return $this->hasMany(KhsModel::class, 'idKRS');
+    }
+    
 }

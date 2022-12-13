@@ -8,8 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class presensiModel extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'idPresesnsiMhs';
+    protected $casts = ['idPresesnsiMhs' => 'string'];
     protected $table = "presensimhs";
     protected $guarded = [];
+
+    // public function mahasiswa()
+    // {
+    //     return $this->belongsTo(MahasiswaModel::class, 'npm', 'npm');
+    // }
 
     public function krs()
     {
@@ -18,11 +25,6 @@ class presensiModel extends Model
 
     public function jurnalPerkuliahan()
     {
-        return $this->belongsTo(jurnalPerkuliahanModel::class, 'idJurnal', 'idJurnal');
-    }
-
-    public function mahasiswa()
-    {
-        return $this->belongsTo(MahasiswaModel::class, 'npm', 'npm');
+        return $this->belongsTo(presensiModel::class, 'idJurnal', 'idJurnal');
     }
 }

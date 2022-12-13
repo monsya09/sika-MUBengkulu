@@ -37,8 +37,19 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <!-- END: Content -->
         <!-- BEGIN: JS Assets-->
-        <!-- <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=["your-google-map-api"]&libraries=places"></script> -->
+        {{-- <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=["your-google-map-api"]&libraries=places"></script> --}}
+        <script>    function random_color() {
+            const letters = '0123456789ABCDEF'.split('');
+            let color = '#';
+    
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.round(Math.random() * 15)];
+            }
+            
+            return color;
+            }
+        </script>
         <script src="/dist/js/app.js"></script>
         @yield('js')
         <!-- END: JS Assets-->

@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class KelasKuliahModel extends Model
 {
     use HasFactory;
+    protected $primaryKey = "idKelasKuliah";
+    protected $casts = ['idKelasKuliah' => 'string'];
     protected $table = "kelaskuliah";
 
     public function krs()
@@ -64,7 +66,7 @@ class KelasKuliahModel extends Model
         return $this->hasMany(jurnalPerkuliahanModel::class, 'idKelasKuliah');
     }
 
-    public function presensiMhs()
+    public function presensimhs()
     {
         return $this->hasManyThrough(presensiModel::class, jurnalPerkuliahanModel::class,
         'idKelasKuliah', // Foreign key on the "jurnalperkuliahan" table...
@@ -72,6 +74,16 @@ class KelasKuliahModel extends Model
         'idKelasKuliah', // Local key on the "kelaskuliah" table...
         'idJurnal' // Local key on the "jurnalperkuliahan" table...    
     );
+    }
+
+    public function detailKhs()
+    {
+        return $this->hasMany(detailKhsModel::class, 'idKelasKuliah');
+    }
+
+    public function Khs()
+    {
+        return $this->hasMany(KhsModel::class, 'idKelasKuliah');
     }
 
 }

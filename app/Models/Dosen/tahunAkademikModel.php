@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class tahunAkademikModel extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'idTahunAkademik';
+    protected $casts = ['idTahunAkademik' => 'string'];
     protected $table = "tahunakademik";
 
     public function KelasKuliah()
@@ -18,5 +20,10 @@ class tahunAkademikModel extends Model
     public function krs()
     {
         return $this->hasMany(krsModel::class, 'idTahunAkademik');
+    }
+
+    public function jadwalakademik()
+    {
+        return $this->hasMany(jadwalAkademikModel::class, 'idTahunAkademik');
     }
 }

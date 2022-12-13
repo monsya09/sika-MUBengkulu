@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class DosenModel extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'nidn';
+    protected $casts = ['nidn' => 'string'];
     protected $table = "dosen";
 
     public function KelasKuliah()
@@ -33,6 +35,36 @@ class DosenModel extends Model
         'nidn', // Local key on the "dosen" table...
         'idKelasKuliah' // Local key on the "kelaskuliah" table...        
     );
+    }
+
+    public function pembimbingkrs()
+    {
+        return $this->hasMany(PAModel::class, 'nidn');
+    }
+
+    public function bimbingankrs()
+    {
+        return $this->hasManyThrough(BimbinganKrsModel::class, PAModel::class,
+        'nidn', // Foreign key on the "Pembimbing akademik" table...
+        'idPembimbingAkademik', // Foreign key on the "bimbingankrs" table...
+        'nidn', // Local key on the "dosen" table...
+        'idPembimbingAkademik' // Local key on the "pembimbingakademik" table...        
+    );
+    }
+
+    public function programstudi()
+    {
+        return $this->belongsTo(prodiModel::class, 'idProgramStudi', 'idProgramStudi');
+    }
+
+    public function pembimbingTa()
+    {
+        return $this->hasMany(PembimbingTugasAkhir::class, 'nidn');
+    }
+
+    public function mahasiswa()
+    {
+        return $this->belongsToMany(MahasiswaModel::class, 'pembimbingta', 'npm', 'nidn');
     }
 
 }

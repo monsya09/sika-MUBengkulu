@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class jurnalPerkuliahanModel extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'idJurnal';
+    protected $casts = ['idJurnal' => 'string'];
     protected $table = "jurnalperkuliahan";
     protected $guarded = [];
 
@@ -16,8 +18,18 @@ class jurnalPerkuliahanModel extends Model
         return $this->belongsTo(KelasKuliahModel::class, 'idKelasKuliah', 'idKelasKuliah');
     }
 
-    public function presensiMhs()
+    public function presensimhs()
     {
         return $this->hasMany(presensiModel::class, 'idJurnal');
+    }
+
+    public function krs()
+    {
+        return $this->belongsToMany(krsModel::class, 'presensimhs', 'idKRS', 'idJurnal');
+    }
+
+    public function presensiDosen()
+    {
+        return $this->hasMany(presensiDosenModel::class, 'idJurnal');
     }
 }

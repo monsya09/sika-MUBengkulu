@@ -1,125 +1,170 @@
 @extends('package_dosen.template_dosen')
 @section('judul', 'Dashboard')
-
 @section('konten')
-    <div class="grid grid-cols-12 gap-6">
-        <div class="col-span-12 2xl:col-span-9">
-            <div class="grid grid-cols-12 gap-6">
-                <!-- BEGIN: Notification -->
-                <div class="col-span-12 mt-6 -mb-6 intro-y">
-                    <div class="alert alert-dismissible show box bg-theme-25 text-white flex items-center mb-6" role="alert">
-                        <span>Introducing new dashboard! Download now at <a href="https://themeforest.net/item/midone-jquery-tailwindcss-html-admin-template/26366820" class="underline ml-1" target="blank">themeforest.net</a>.</span>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> <i data-feather="x" class="w-4 h-4"></i> </button>
-                    </div>
+<div class="grid grid-cols-12 gap-6 mt-5">
+    <!-- BEGIN: Notification -->
+    <div class="col-span-12 mt-2 -mb-6 intro-y">
+        <div class="alert alert-dismissible show box bg-theme-25 text-white flex items-center mb-6" role="alert">
+            <span>
+                Tinggalkanlah yang meragukanmu pada apa yang tidak meragukanmu. Sesungguhnya kejujuran lebih menenangkan jiwa, sedangkan dusta (menipu) akan menggelisahkan jiwa (HR. Tirmidzi no. 2518 dan Ahmad 1/200)
+            </span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> <i data-feather="x" class="w-4 h-4"></i> </button>
+        </div>
+    </div>
+    <!-- BEGIN: Notification -->
+    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+        <div class="report-box zoom-in">
+            <div class="box p-5">
+                <div class="flex">
+                    <i data-feather="calendar" class="report-box__icon text-theme-15 dark:text-theme-25"></i> 
                 </div>
-                <!-- BEGIN: Notification -->
-                
-                <!-- BEGIN: Sales Report -->
-                <div class="col-span-12 lg:col-span-6 mt-2">
-                    <div class="intro-y block sm:flex items-center h-10">
-                        <h2 class="text-lg font-medium truncate mr-5">
-                            Jumlah Mahasiswa 5 Tahun Terakhir
-                        </h2>
-                        <div class="sm:ml-auto mt-3 sm:mt-0 relative text-gray-700 dark:text-gray-300">
-                            <i data-feather="calendar" class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0"></i> 
-                            <input type="text" class="datepicker form-control sm:w-56 box pl-10">
-                        </div>
-                    </div>
-                    <div class="intro-y box p-5 mt-12 sm:mt-5">
-                        <div class="flex flex-col xl:flex-row xl:items-center">
-                            <div class="flex">
-                                <div>
-                                    <div class="text-theme-24 dark:text-gray-300 text-lg xl:text-xl font-medium">7000</div>
-                                    <div class="mt-0.5 text-gray-600 dark:text-gray-600">This Month</div>
-                                </div>
-                                <div class="w-px h-12 border border-r border-dashed border-gray-300 dark:border-dark-5 mx-4 xl:mx-5"></div>
-                                <div>
-                                    <div class="text-gray-600 dark:text-gray-600 text-lg xl:text-xl font-medium">75000</div>
-                                    <div class="mt-0.5 text-gray-600 dark:text-gray-600">Last Month</div>
-                                </div>
-                            </div>
-                            <div class="dropdown xl:ml-auto mt-5 xl:mt-0">
-                                <button class="dropdown-toggle btn btn-outline-secondary font-normal" aria-expanded="false"> Filter by Category <i data-feather="chevron-down" class="w-4 h-4 ml-2"></i> </button>
-                                <div class="dropdown-menu w-40">
-                                    <div class="dropdown-menu__content box dark:bg-dark-1 p-2 overflow-y-auto h-32"> <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">PC & Laptop</a> <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">Smartphone</a> <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">Electronic</a> <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">Photography</a> <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">Sport</a> </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="report-chart">
-                            <canvas id="report-line-chart" height="169" class="mt-6"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Sales Report -->
-                <!-- BEGIN: Weekly Top Seller -->
-                <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-2">
-                    <div class="intro-y flex items-center h-10">
-                        <h2 class="text-lg font-medium truncate mr-5">
-                            Mahasiswa per Prodi
-                        </h2>
-                        <a href="" class="ml-auto text-theme-30 dark:text-theme-25 truncate">Show More</a> 
-                    </div>
-                    <div class="intro-y box p-5 mt-5">
-                        <canvas class="mt-3" id="report-pie-chart" height="300"></canvas>
-                        <div class="mt-8">
-                            <div class="flex items-center">
-                                <div class="w-2 h-2 bg-theme-11 rounded-full mr-3"></div>
-                                <span class="truncate">17 - 30 Years old</span> 
-                                <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                                <span class="font-medium xl:ml-auto">62%</span> 
-                            </div>
-                            <div class="flex items-center mt-4">
-                                <div class="w-2 h-2 bg-theme-21 rounded-full mr-3"></div>
-                                <span class="truncate">31 - 50 Years old</span> 
-                                <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                                <span class="font-medium xl:ml-auto">33%</span> 
-                            </div>
-                            <div class="flex items-center mt-4">
-                                <div class="w-2 h-2 bg-theme-15 rounded-full mr-3"></div>
-                                <span class="truncate">>= 50 Years old</span> 
-                                <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                                <span class="font-medium xl:ml-auto">10%</span> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Weekly Top Seller -->
-                <!-- BEGIN: Sales Report -->
-                <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-2">
-                    <div class="intro-y flex items-center h-10">
-                        <h2 class="text-lg font-medium truncate mr-5">
-                            Kepangkatan Dosen
-                        </h2>
-                        <a href="" class="ml-auto text-theme-30 dark:text-theme-25 truncate">Show More</a> 
-                    </div>
-                    <div class="intro-y box p-5 mt-5">
-                        <canvas class="mt-3" id="report-donut-chart" height="300"></canvas>
-                        <div class="mt-8">
-                            <div class="flex items-center">
-                                <div class="w-2 h-2 bg-theme-11 rounded-full mr-3"></div>
-                                <span class="truncate">17 - 30 Years old</span> 
-                                <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                                <span class="font-medium xl:ml-auto">62%</span> 
-                            </div>
-                            <div class="flex items-center mt-4">
-                                <div class="w-2 h-2 bg-theme-21 rounded-full mr-3"></div>
-                                <span class="truncate">31 - 50 Years old</span> 
-                                <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                                <span class="font-medium xl:ml-auto">33%</span> 
-                            </div>
-                            <div class="flex items-center mt-4">
-                                <div class="w-2 h-2 bg-theme-15 rounded-full mr-3"></div>
-                                <span class="truncate">>= 50 Years old</span> 
-                                <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                                <span class="font-medium xl:ml-auto">10%</span> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Sales Report -->
-
-                </div>
+                <div class="text-base font-medium leading-8 mt-6">
+                    <label for="floatingInput" class="text-gray-700">
+                        {{ date('d-m-Y', strtotime($jadAkademik->tglUTSMulai)) }} to {{ date('d-m-Y', strtotime($jadAkademik->tglUTSSelesai)) }}
+                    </label>
+                 </div>
+                <div class="text-base text-gray-600 mt-1">Priode perkuliahan</div>
             </div>
         </div>
     </div>
+    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+        <div class="report-box zoom-in">
+            <div class="box p-5">
+                <div class="flex">
+                    <i data-feather="calendar" class="report-box__icon text-theme-20 dark:text-theme-25"></i> 
+                </div>
+                <div class="text-base font-medium leading-8 mt-6">
+                    <label for="floatingInput" class="text-gray-700">
+                        {{ date('d-m-Y', strtotime($jadAkademik->tglUTSMulai)) }} to {{ date('d-m-Y', strtotime($jadAkademik->tglUTSSelesai)) }}
+                    </label>
+                </div>
+                <div class="text-base text-gray-600 mt-1">Priode UTS</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+        <div class="report-box zoom-in">
+            <div class="box p-5">
+                <div class="flex">
+                    <i data-feather="calendar" class="report-box__icon text-theme-21 dark:text-theme-25"></i> 
+                </div>
+                <div class="text-base font-medium leading-8 mt-6">
+                    <label for="floatingInput" class="text-gray-700">
+                        {{ date('d-m-Y', strtotime($jadAkademik->tglUASMulai)) }} to {{ date('d-m-Y', strtotime($jadAkademik->tglUASSelesai)) }}
+                    </label>
+                </div>
+                <div class="text-sm text-gray-600 mt-1">Priode UAS </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+        <div class="report-box zoom-in">
+            <div class="box p-5">
+                <div class="flex">
+                    <i data-feather="calendar" class="report-box__icon text-theme-24 dark:text-theme-25"></i> 
+                </div>
+                <div class="text-base font-medium leading-8 mt-6">
+                    <label for="floatingInput" class="text-gray-700">{{ date('d-m-Y', strtotime($jadAkademik->tglPenilaianMulai)) }} to {{ date('d-m-Y', strtotime($jadAkademik->tglPenilaianSelesai)) }}
+                    </label>
+                </div>
+                <div class="text-base text-gray-600 mt-1">Priode Pengisian Nilai</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid grid-cols-12 gap-6 mt-8">
+    <div class="col-span-12 2xl:col-span-9">
+        <div class="grid grid-cols-12 gap-6">           
+            <!-- BEGIN: Sales Report -->
+            <div class="col-span-12 lg:col-span-6 mt-2">
+                <div class="intro-y block sm:flex items-center h-10">
+                    <h2 class="text-lg font-medium truncate mr-5">
+                        Jumlah Mahasiswa 5 Tahun Terakhir
+                    </h2>
+                </div>
+                <div class="intro-y box p-5 mt-12 sm:mt-2">
+                    <div class="shadow-lg rounded-lg overflow-hidden">
+                        <div class="py-3 px-5 bg-gray-50">Data Mahasiswa per Angkatan</div>
+                        <canvas height="169" class="mt-1" id="chartLine"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-12 lg:col-span-6 mt-2">
+                <div class="intro-y block sm:flex items-center h-10">
+                    <h2 class="text-lg font-medium truncate mr-5">
+                        Jumlah Mahasiswa per Prodi TA {{ $ta->idTahunAkademik }}
+                    </h2>
+                </div>
+                <div class="intro-y box p-5 mt-12 sm:mt-2">
+                    <div class="shadow-lg rounded-lg overflow-hidden">
+                        <div class="py-3 px-5 bg-gray-50">Data Mahasiswa per Prodi TA {{ $ta->idTahunAkademik }}</div>
+                        <canvas height="169" class="mt-1" id="chartBar"></canvas>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Sales Report -->
+            </div>
+        </div>
+    </div>
+</div>
+
+@section('js')
+    <!-- Required chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var mhsProdi  = <?php echo $mhsProdi ?>;
+    var prodi  = <?php echo $prodi ?>;
+    const labelsBarChart = prodi;
+  const dataBarChart = {
+    labels: labelsBarChart,
+    datasets: [
+      {
+        label: "Jumlah Mahasiswa",
+        backgroundColor: "hsl(252, 82.9%, 67.8%)",
+        borderColor: "hsl(252, 82.9%, 67.8%)",
+        data: mhsProdi,
+      },
+    ],
+  };
+
+  const configBarChart = {
+    type: "bar",
+    data: dataBarChart,
+    options: {},
+  };
+
+  var chartBar = new Chart(
+    document.getElementById("chartBar"),
+    configBarChart
+  );
+</script>
+<script>
+    var angkatan = <?php echo $tahunMasuk ?>;
+    var mhs = <?php echo $mhsCount ?>;
+    const labels = angkatan;
+    const data = {
+        labels: labels,
+        datasets: [
+        {
+            label: "Jumlah Mahasiswa",
+            backgroundColor: "hsl(252, 82.9%, 67.8%)",
+            borderColor: "hsl(252, 82.9%, 67.8%)",
+            data: mhs,
+        },
+        ],
+    };
+
+    const configLineChart = {
+        type: "line",
+        data,
+        options: {},
+    };
+
+    var chartLine = new Chart(
+        document.getElementById("chartLine"),
+        configLineChart
+    );
+</script>
+@stop
 @endsection
